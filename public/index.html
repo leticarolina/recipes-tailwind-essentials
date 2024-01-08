@@ -10,20 +10,24 @@
     <!-- Script -->
     <!-- <script src="script.js" defer></script> -->
   </head>
-  <body class="text-gray-600">
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <body class="text-gray-700 bg-gray-200">
+    <!-- padding and margin are the same just use .m-{} -->
+    <!-- padding .p-{padding amount} padding x and y .py-{} .px-{} padding-top .pt-{} padding start and end .ps-{} .pe-{} padding right, left, bottom .pr-{} .pl-{} .pb-{} -->
+    <!-- borders width .border-2  same as css border-width: 2px;  .border-t-2 same as border-top-width: 2px; -->
+    <!-- div whole content wrapper -->
     <div>
-      <!-- content wrapper -->
       <div>
         <nav>
           <div>
-            <h1>
-              <a href="#" class="text-xl">Vegetariannn Recipessss</a>
+            <h1 class="font-bold uppercase p-4 border-b border-gray-300">
+              <a href="#" class="text-green-600 text-sm md:text-lg"
+                >Vegetarian Recipes</a
+              >
             </h1>
           </div>
           <ul>
             <li>
-              <a href="#"><span class="font-bold">Home</span></a>
+              <a href="#"><span>Home</span></a>
             </li>
             <li>
               <a href="#"><span>About</span></a>
@@ -35,40 +39,134 @@
         </nav>
       </div>
       <!--end of NAV-->
-      <main>
-        <div>
+      <main class="px-16 py-6">
+        <!-- flex = display: flex;  justify-center, justify-around , justify-evenly -->
+        <!-- height and width h-{height px} w-{width px} -->
+        <div class="flex justify-center md:justify-end">
           <a href="#">Log in</a>
-          <a href="#">Sign Up</a>
+          <a href="#" class="ml-3 p-3 border-2 border-gray-500">Sign Up</a>
         </div>
 
         <header>
           <!-- adding color text-{color}-{shade} -->
-          <h2 class="text-green-400">vegetarian</h2>
-          <h3 class="text-gray-600">Recipes</h3>
+          <!-- adding text size text-{size}-->
+          <h2 class="text-green-600 text-5xl font-serif tracking-widest">
+            Vegetarian
+          </h2>
+          <h3 class="text-gray-600 text-3xl">Recipes</h3>
         </header>
         <div>
-          <h4>Latest Recipes</h4>
+          <!-- border color .border-{color}-{shade} -->
+          <h4 class="font-bold mt-12 pb-4 border-b-2 border-gray-300">
+            Latest Recipes
+          </h4>
 
           <!-- CARD -->
-          <div>
-            <div>
-              <img src="/public/images/Burrito-Bowl.jpeg" alt="Burrito bowl" />
-              <div><span>Chilli beans</span> <span>Recipe by Leti</span></div>
+          <div class="mt-8">
+            <!-- rounded-md = border-radius: 0px; can choose border radius based on sm, md,lg  -->
+            <div class="card">
+              <img
+                src="/public/images/Stuffed-Peppers.jpeg"
+                alt="Burrito bowl"
+                class="object-cover sm:h-96 h-64 w-full"
+              />
+              <div class="px-5 py-3">
+                <span class="text-primary font-bold text-lg"
+                  >Vegetarian Stuffed Peppers</span
+                >
+                <span class="block text-gray-500 text-sm"
+                  >Recipe by:
+                  <span class="font-chef">Leticia Azevedo</span></span
+                >
+              </div>
+              <!-- manual badge: parent card element has position of relative, the badge div has position: absolute top-0 , this will make badge show on top of card -->
+              <div class="badge">
+                <span>35 min</span>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="/public/images/ratatouille.jpeg"
+                alt="Burrito bowl"
+                class="object-cover sm:h-96 h-64 w-full"
+              />
+              <div class="px-5 py-3">
+                <span class="text-primary font-bold text-lg"
+                  >Goat Cheese Polenta with Ratatouille</span
+                >
+                <span class="block text-gray-500 text-sm"
+                  >Recipe by:
+                  <span class="font-chef">Leticia Azevedo</span></span
+                >
+              </div>
+              <!-- manual badge: parent card element has position of relative, the badge div has position: absolute top-0 , this will make badge show on top of card -->
+              <div class="badge">
+                <span>35 min</span>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="/public/images/tomato-cream-sauce.jpeg"
+                alt="Burrito bowl"
+                class="object-cover sm:h-96 h-64 w-full"
+              />
+              <div class="px-5 py-3">
+                <span class="text-primary font-bold text-lg"
+                  >Pasta with Tomato Cream Sauce</span
+                >
+                <span class="block text-gray-500 text-sm"
+                  >Recipe by:
+                  <span class="font-chef">Leticia Azevedo</span></span
+                >
+              </div>
+              <!-- manual badge: parent card element has position of relative, the badge div has position: absolute top-0 , this will make badge show on top of card -->
+              <div class="badge">
+                <span>35 min</span>
+              </div>
             </div>
           </div>
           <!-- END CARD -->
 
-          <h4>Most Popular</h4>
+          <h4 class="font-bold mt-12 pb-4 border-b-2 border-gray-300">
+            Most Popular
+          </h4>
 
-          <div>
+          <div class="mt-8">
             <!-- card goes here -->
           </div>
 
-          <div>
-            <div>Load more...</div>
+          <div class="flex justify-center">
+            <div class="bg-gray-300">Load more...</div>
           </div>
         </div>
       </main>
     </div>
   </body>
 </html>
+
+<!-- Notes Tailwind config
+Tailwind classes can be configured, this menas the text-gray-200 or text-sm can be reffering to the values we wish on top of that can also create new classes
+source: https://www.youtube.com/watch?v=6UVQlB1eo5A&list=PL4cUxeGkcC9gpXORlEHjc5bgnIi5HEGhw&index=5
+-- how to set tailwind config: 
+inside tailwind.config.js can declare new variables for reference.
+For getting the default set and checking how the variables are declared https://tailwindcss.com/docs/theme 
+example: 
+   colors: {
+        primary: "#FF6363",
+        purple: {
+          100: "##CF9FFF",
+          200: "#770737",
+        },
+      }
+everytime you change the config file need to run: npm run build-css -->
+
+<!-- RESPONSIVENESS: no need to create media query https://tailwindcss.com/docs/screens
+   all classes are applied to small device by default and being hereditary for larger displays
+ md:text-red-500 means whe the display reaches the md pixels and above this class will be applied
+can also customize breakpoints in tailwind.config.js file , add your custom screens configuration directly under the theme key
+ theme: {
+    screens: {
+      'sm': '576px',
+      // => @media (min-width: 576px) { ... }
+    }
+-->

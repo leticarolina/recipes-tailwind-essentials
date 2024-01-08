@@ -1,3 +1,21 @@
+/* importing google fonts, step 2 is to create a new font variable on config.js and refer to the actual font name
+ fontFamily: {
+        chef: " 'Shadows Into Light', cursive",
+      }  */
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @apply directive
+Possibility to create a target class and apply all styles to it, the html will only need the targeted class to apply all styles */
+
+/* creating a .card class, putting all styles on it so the card on the html will only hold one single class */
+.card {
+  @apply bg-white rounded-lg overflow-hidden shadow-md relative;
+}
+
+.badge {
+  @apply bg-secondary-100 text-sm uppercase font-semibold rounded-full p-2 absolute top-0 m-3;
+}
