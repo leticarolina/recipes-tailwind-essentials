@@ -15,36 +15,52 @@
     <!-- padding .p-{padding amount} padding x and y .py-{} .px-{} padding-top .pt-{} padding start and end .ps-{} .pe-{} padding right, left, bottom .pr-{} .pl-{} .pb-{} -->
     <!-- borders width .border-2  same as css border-width: 2px;  .border-t-2 same as border-top-width: 2px; -->
     <!-- div whole content wrapper -->
-    <div>
-      <div>
+    <!-- grid md:grid-cols-4 means the grid will have 4 columns -->
+    <div class="grid md:grid-cols-4">
+      <!--md:col-span-1; this column will take 1/4 of the whole container on medium devices-->
+      <div class="md:col-span-1">
         <nav>
           <div>
             <h1 class="font-bold uppercase p-4 border-b border-gray-300">
-              <a href="#" class="text-green-600 text-sm md:text-lg"
+              <!-- hovering effect hover:{code to run} , if more than one effect need to declare hover: multiple times-->
+              <a
+                href="#"
+                class="text-green-600 text-sm md:text-lg hover:text-green-800"
                 >Vegetarian Recipes</a
               >
             </h1>
           </div>
           <ul>
             <li>
-              <a href="#"><span>Home</span></a>
+              <a href="#">
+                <img src="/public/images/home.svg" alt="Home" class="w-4" />
+                <span>Home</span></a
+              >
             </li>
             <li>
+              <img src="/public/images/about.svg" alt="Home" class="w-4" />
               <a href="#"><span>About</span></a>
             </li>
             <li>
-              <a href="#"><span>Content</span></a>
+              <img src="/public/images/contact.svg" alt="Home" class="w-4" />
+              <a href="#"><span>Contact</span></a>
             </li>
           </ul>
         </nav>
       </div>
       <!--end of NAV-->
-      <main class="px-16 py-6">
+      <main class="px-16 py-6 md:col-span-3">
         <!-- flex = display: flex;  justify-center, justify-around , justify-evenly -->
         <!-- height and width h-{height px} w-{width px} -->
         <div class="flex justify-center md:justify-end">
-          <a href="#">Log in</a>
-          <a href="#" class="ml-3 p-3 border-2 border-gray-500">Sign Up</a>
+          <a href="#" class="btn bg-gray-300 hover:bg-gray-500 hover:text-white"
+            >Log in</a
+          >
+          <a
+            href="#"
+            class="ml-3 btn bg-gray-300 hover:bg-gray-500 hover:text-white"
+            >Sign Up</a
+          >
         </div>
 
         <header>
@@ -62,9 +78,11 @@
           </h4>
 
           <!-- CARD -->
-          <div class="mt-8">
+          <!-- grid = will make grid container 
+          grid-cols-{number} columns go up to 12 , medium devices -->
+          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- rounded-md = border-radius: 0px; can choose border radius based on sm, md,lg  -->
-            <div class="card">
+            <div class="card hover:shadow-2xl">
               <img
                 src="/public/images/Stuffed-Peppers.jpeg"
                 alt="Burrito bowl"
@@ -80,11 +98,17 @@
                 >
               </div>
               <!-- manual badge: parent card element has position of relative, the badge div has position: absolute top-0 , this will make badge show on top of card -->
-              <div class="badge">
-                <span>35 min</span>
+              <div class="badge flex items-center">
+                <img
+                  src="/public/images/clock.svg"
+                  alt="Clock"
+                  class="w-4 h-4 mr-1"
+                />
+                <!-- inline-block class on img could also make svg sit next to span -->
+                <span> 35 min</span>
               </div>
             </div>
-            <div class="card">
+            <div class="card hover:shadow-2xl">
               <img
                 src="/public/images/ratatouille.jpeg"
                 alt="Burrito bowl"
@@ -100,11 +124,16 @@
                 >
               </div>
               <!-- manual badge: parent card element has position of relative, the badge div has position: absolute top-0 , this will make badge show on top of card -->
-              <div class="badge">
+              <div class="badge flex items-center">
+                <img
+                  src="/public/images/clock.svg"
+                  alt="Clock"
+                  class="w-4 h-4 mr-1"
+                />
                 <span>35 min</span>
               </div>
             </div>
-            <div class="card">
+            <div class="card hover:shadow-2xl">
               <img
                 src="/public/images/tomato-cream-sauce.jpeg"
                 alt="Burrito bowl"
@@ -120,7 +149,12 @@
                 >
               </div>
               <!-- manual badge: parent card element has position of relative, the badge div has position: absolute top-0 , this will make badge show on top of card -->
-              <div class="badge">
+              <div class="badge flex items-center">
+                <img
+                  src="/public/images/clock.svg"
+                  alt="Clock"
+                  class="w-4 h-4 mr-1"
+                />
                 <span>35 min</span>
               </div>
             </div>
@@ -136,7 +170,7 @@
           </div>
 
           <div class="flex justify-center">
-            <div class="bg-gray-300">Load more...</div>
+            <div class="bg-gray-300 btn hover:shadow-inner">Load more...</div>
           </div>
         </div>
       </main>
