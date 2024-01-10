@@ -1,5 +1,24 @@
 {
+  "name": "recipes-tailwind-essentials",
+  "description": "## Table of contents",
+  "version": "1.0.0",
+  "main": "index.html",
   "devDependencies": {
     "tailwindcss": "^3.4.0"
-  }
+  },
+  "dependencies": {
+    "tailwindcss": "^3.4.0"
+   
+  },
+  "scripts": {
+    "build-css": "tailwindcss build -i ./src/input.css -o ./src/output.css",
+    "tailwind": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leticarolina/recipes-tailwind-essentials.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
