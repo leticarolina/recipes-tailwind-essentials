@@ -8,7 +8,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/src/output.css" />
     <!-- Script -->
-    <!-- <script src="script.js" defer></script> -->
+    <script src="script.js" defer></script>
+    <!-- <style>
+      * {
+        outline: 1px solid red !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    </style> -->
   </head>
   <body class="text-gray-700 bg-gray-200">
     <!-- padding and margin are the same just use .m-{} -->
@@ -16,12 +23,13 @@
     <!-- borders width .border-2  same as css border-width: 2px;  .border-t-2 same as border-top-width: 2px; -->
     <!-- div whole content wrapper -->
     <!-- grid md:grid-cols-4 means the grid will have 4 columns -->
-    <div class="grid md:grid-cols-4">
+    <div class="grid md:grid-cols-5">
       <!--md:col-span-1; this column will take 1/4 of the whole container on medium devices-->
-      <div class="md:col-span-1">
-        <nav>
-          <div>
-            <h1 class="font-bold uppercase p-4 border-b border-gray-300">
+      <div class="md:col-span-1 md:flex md:justify-end">
+        <nav class="border-b border-gray-300 overflow-x-hidden">
+          <!-- items-center vertically center the element inside a flexbox -->
+          <div class="flex justify-between items-center">
+            <h1 class="font-bold uppercase py-3 pl-3">
               <!-- hovering effect hover:{code to run} , if more than one effect need to declare hover: multiple times-->
               <a
                 href="#"
@@ -29,36 +37,64 @@
                 >Vegetarian Recipes</a
               >
             </h1>
+            <div class="px-4 cursor-pointer md:hidden" id="burger">
+              <img src="/public/images/menu.svg" alt="Menu icon" class="w-7" />
+            </div>
           </div>
-          <ul>
+          <ul
+            class="text-sm md:text-base md:mt-6 hidden md:block mr-2"
+            id="menu"
+          >
             <li>
-              <a href="#">
-                <img src="/public/images/home.svg" alt="Home" class="w-4" />
+              <a
+                href="#"
+                class="px-4 flex justify-end py-1 border-e-4 border-green-600"
+              >
+                <img
+                  src="/public/images/home.svg"
+                  alt="Home"
+                  class="w-4 mr-2"
+                />
                 <span>Home</span></a
               >
             </li>
             <li>
-              <img src="/public/images/about.svg" alt="Home" class="w-4" />
-              <a href="#"><span>About</span></a>
+              <a href="#" class="px-4 flex justify-end py-1 border-e-4">
+                <img
+                  src="/public/images/about.svg"
+                  alt="Home"
+                  class="w-4 mr-2"
+                />
+                <span>About</span></a
+              >
             </li>
             <li>
-              <img src="/public/images/contact.svg" alt="Home" class="w-4" />
-              <a href="#"><span>Contact</span></a>
+              <a href="#" class="px-4 flex justify-end py-1 border-e-4">
+                <img
+                  src="/public/images/contact.svg"
+                  alt="Home"
+                  class="w-4 mr-2"
+                />
+                <span>Contact</span></a
+              >
             </li>
           </ul>
         </nav>
       </div>
       <!--end of NAV-->
-      <main class="px-16 py-6 md:col-span-3">
+      <main class="px-16 py-6 md:col-span-4 w-screen md:w-auto">
         <!-- flex = display: flex;  justify-center, justify-around , justify-evenly -->
         <!-- height and width h-{height px} w-{width px} -->
+        <!-- transition on css, making hover effect more ease // tailwind need to declare transition ease-{choice} duration-{choice} -->
         <div class="flex justify-center md:justify-end">
-          <a href="#" class="btn bg-gray-300 hover:bg-gray-500 hover:text-white"
+          <a
+            href="#"
+            class="btn bg-gray-300 hover:bg-gray-500 hover:text-white transition ease-linear duration-400"
             >Log in</a
           >
           <a
             href="#"
-            class="ml-3 btn bg-gray-300 hover:bg-gray-500 hover:text-white"
+            class="ml-3 btn bg-gray-300 hover:bg-gray-500 hover:text-white transition ease-linear duration-400"
             >Sign Up</a
           >
         </div>
@@ -66,14 +102,18 @@
         <header>
           <!-- adding color text-{color}-{shade} -->
           <!-- adding text size text-{size}-->
-          <h2 class="text-green-600 text-5xl font-serif tracking-widest">
+          <h2
+            class="text-green-700 md:text-5xl text-3xl font-serif tracking-widest pt-6 pb-1 flex justify-center"
+          >
             Vegetarian
           </h2>
-          <h3 class="text-gray-600 text-3xl">Recipes</h3>
+          <h3 class="text-gray-500 text-2xl flex justify-center">Recipes</h3>
         </header>
         <div>
           <!-- border color .border-{color}-{shade} -->
-          <h4 class="font-bold mt-12 pb-4 border-b-2 border-gray-300">
+          <h4
+            class="md:text-lg font-bold md:mt-10 mt-8 pb-4 border-b-2 border-gray-300"
+          >
             Latest Recipes
           </h4>
 
@@ -86,7 +126,7 @@
               <img
                 src="/public/images/Stuffed-Peppers.jpeg"
                 alt="Burrito bowl"
-                class="object-cover sm:h-96 h-64 w-full"
+                class="object-cover lg:h-96 h-64 w-full"
               />
               <div class="px-5 py-3">
                 <span class="text-primary font-bold text-lg"
@@ -105,14 +145,14 @@
                   class="w-4 h-4 mr-1"
                 />
                 <!-- inline-block class on img could also make svg sit next to span -->
-                <span> 35 min</span>
+                <span> 40 min</span>
               </div>
             </div>
             <div class="card hover:shadow-2xl">
               <img
                 src="/public/images/ratatouille.jpeg"
                 alt="Burrito bowl"
-                class="object-cover sm:h-96 h-64 w-full"
+                class="object-cover lg:h-96 h-64 w-full"
               />
               <div class="px-5 py-3">
                 <span class="text-primary font-bold text-lg"
@@ -137,7 +177,7 @@
               <img
                 src="/public/images/tomato-cream-sauce.jpeg"
                 alt="Burrito bowl"
-                class="object-cover sm:h-96 h-64 w-full"
+                class="object-cover lg:h-96 h-64 w-full"
               />
               <div class="px-5 py-3">
                 <span class="text-primary font-bold text-lg"
@@ -155,22 +195,107 @@
                   alt="Clock"
                   class="w-4 h-4 mr-1"
                 />
-                <span>35 min</span>
+                <span>30 min</span>
               </div>
             </div>
           </div>
           <!-- END CARD -->
 
-          <h4 class="font-bold mt-12 pb-4 border-b-2 border-gray-300">
+          <h4
+            class="md:text-lg font-bold mt-12 pb-4 border-b-2 border-gray-300"
+          >
             Most Popular
           </h4>
+          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="card hover:shadow-2xl">
+              <img
+                src="/public/images/Gnocchi-with-Broccoli.jpeg"
+                alt="Burrito bowl"
+                class="object-cover lg:h-96 h-64 w-full"
+              />
+              <div class="px-5 py-3">
+                <span class="text-primary font-bold text-lg"
+                  >Gnocchi with Broccoli</span
+                >
+                <span class="block text-gray-500 text-sm"
+                  >Recipe by:
+                  <span class="font-chef">Leticia Azevedo</span></span
+                >
+              </div>
 
+              <div class="badge flex items-center">
+                <img
+                  src="/public/images/clock.svg"
+                  alt="Clock"
+                  class="w-4 h-4 mr-1"
+                />
+
+                <span> 20 min</span>
+              </div>
+            </div>
+            <div class="card hover:shadow-2xl">
+              <img
+                src="/public/images/crock-pot-vegetarian-lasagna.jpeg"
+                alt="Burrito bowl"
+                class="object-cover lg:h-96 h-64 w-full"
+              />
+              <div class="px-5 py-3">
+                <span class="text-primary font-bold text-lg"
+                  >Crockpot Vgetarian Lasagna</span
+                >
+                <span class="block text-gray-500 text-sm"
+                  >Recipe by:
+                  <span class="font-chef">Leticia Azevedo</span></span
+                >
+              </div>
+
+              <div class="badge flex items-center">
+                <img
+                  src="/public/images/clock.svg"
+                  alt="Clock"
+                  class="w-4 h-4 mr-1"
+                />
+                <span>40 min</span>
+              </div>
+            </div>
+            <div class="card hover:shadow-2xl">
+              <img
+                src="/public/images/Cauliflower-Crust.jpeg"
+                alt="Burrito bowl"
+                class="object-cover lg:h-96 h-64 w-full"
+              />
+              <div class="px-5 py-3">
+                <span class="text-primary font-bold text-lg"
+                  >Cauliflower Pizza crust</span
+                >
+                <span class="block text-gray-500 text-sm"
+                  >Recipe by:
+                  <span class="font-chef">Leticia Azevedo</span></span
+                >
+              </div>
+
+              <div class="badge flex items-center">
+                <img
+                  src="/public/images/clock.svg"
+                  alt="Clock"
+                  class="w-4 h-4 mr-1"
+                />
+                <span>30 min</span>
+              </div>
+            </div>
+          </div>
           <div class="mt-8">
             <!-- card goes here -->
           </div>
 
           <div class="flex justify-center">
-            <div class="bg-gray-300 btn hover:shadow-inner">Load more...</div>
+            <!-- transform: because we will change scale need to declare .transform first, then example to grow 5% hover:scale-105 -->
+            <!-- opacity: hover:bg-opacity-50 on hover the bg will be 50% less opaque bg-opacity-20; would be 80% less opaque-->
+            <div
+              class="bg-secondary-100 btn hover:shadow-inner transform hover:scale-110 hover:bg-opacity-50 transition ease-out duration-300"
+            >
+              Load more...
+            </div>
           </div>
         </div>
       </main>
@@ -204,3 +329,26 @@ can also customize breakpoints in tailwind.config.js file , add your custom scre
       // => @media (min-width: 576px) { ... }
     }
 -->
+
+<!-- code to check width of each element and fix overflow:
+  <style>
+      * {
+        outline: 1px solid red !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    </style> -->
+
+<!-- TOPICS COVERED THIS PROJECT:
+- Margin, Padding , Borders
+- Flexbox
+- Grid
+- Buttons
+- Tailwind Config
+- Custom fonts and colors
+- @apply
+- Icons
+- Hover
+- Transition and Transform
+- Breakpoints
+-  -->
