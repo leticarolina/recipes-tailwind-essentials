@@ -3,6 +3,12 @@ module.exports = {
   content: ["*.html"],
   theme: {
     extend: {
+      screens: {
+        // creating a new breakpoint
+        laptop: "600px",
+        // overriding the default breakpoint lg
+        lg: "700px",
+      },
       colors: {
         primary: "#4F7942",
         secondary: {

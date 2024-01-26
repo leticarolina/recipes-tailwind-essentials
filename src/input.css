@@ -4,8 +4,12 @@
       }  */
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 
+/* If you want to add your own default base styles for specific HTML elements, The base layer is for things like reset rules or default styles applied to plain HTML elements. h1/span/etc */
 @tailwind base;
+/* Use the components layer for any more complicated classes you want to add to your project that you’d still like to be able to override with utility classes. 
+The components layer is for class-based styles that you want to be able to override with utilities. */
 @tailwind components;
+/* The utilities layer is for small, single-purpose classes that should always take precedence over any other styles. */
 @tailwind utilities;
 
 /* @apply directive
@@ -21,4 +25,17 @@ Possibility to create a target class and apply all styles to it, the html will o
 
 .btn {
   @apply uppercase rounded-full py-2 px-3 text-xs cursor-pointer tracking-wider;
+}
+
+/* Use the @layer directive to tell Tailwind which “bucket” a set of custom styles belong to. Valid layers are base, components, and utilities.
+Using the @layer directive lets you control the final declaration order while still organizing your actual code in whatever way you like.*/
+@layer base {
+  h1 {
+    /* To adjust the opacity of a color retrieved with theme, use a slash followed by the opacity value   background-color: theme(colors.blue.500 / 75%); */
+    background-color: theme(colors.secondary.100);
+  }
+  h2 {
+    /*  using function theme() to access text color */
+    @apply text-lg;
+  }
 }

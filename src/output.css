@@ -5,6 +5,8 @@
         chef: " 'Shadows Into Light', cursive",
       }  */
 
+/* If you want to add your own default base styles for specific HTML elements, The base layer is for things like reset rules or default styles applied to plain HTML elements. h1/span/etc */
+
 /* ! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com  */
 
 /*
@@ -449,6 +451,16 @@ video {
   display: none;
 }
 
+h1 {
+  background-color: #f5f0e8;
+}
+
+h2 {
+  /*  using function theme() to access text color */
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -549,8 +561,17 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+/* Use the components layer for any more complicated classes you want to add to your project that you’d still like to be able to override with utility classes. 
+The components layer is for class-based styles that you want to be able to override with utilities. */
+
 .container{
   width: 100%;
+}
+
+@media (min-width: 600px){
+  .container{
+    max-width: 600px;
+  }
 }
 
 @media (min-width: 640px){
@@ -559,15 +580,15 @@ video {
   }
 }
 
-@media (min-width: 768px){
+@media (min-width: 700px){
   .container{
-    max-width: 768px;
+    max-width: 700px;
   }
 }
 
-@media (min-width: 1024px){
+@media (min-width: 768px){
   .container{
-    max-width: 1024px;
+    max-width: 768px;
   }
 }
 
@@ -583,12 +604,10 @@ video {
   }
 }
 
+/* The utilities layer is for small, single-purpose classes that should always take precedence over any other styles. */
+
 .visible{
   visibility: visible;
-}
-
-.collapse{
-  visibility: collapse;
 }
 
 .absolute{
@@ -601,14 +620,6 @@ video {
 
 .top-0{
   top: 0px;
-}
-
-.col-span-1{
-  grid-column: span 1 / span 1;
-}
-
-.col-span-4{
-  grid-column: span 4 / span 4;
 }
 
 .ml-3{
@@ -631,14 +642,6 @@ video {
   margin-top: 2rem;
 }
 
-.mt-10{
-  margin-top: 2.5rem;
-}
-
-.mt-6{
-  margin-top: 1.5rem;
-}
-
 .block{
   display: block;
 }
@@ -651,16 +654,8 @@ video {
   display: flex;
 }
 
-.table{
-  display: table;
-}
-
 .grid{
   display: grid;
-}
-
-.contents{
-  display: contents;
 }
 
 .hidden{
@@ -673,10 +668,6 @@ video {
 
 .h-64{
   height: 16rem;
-}
-
-.h-96{
-  height: 24rem;
 }
 
 .w-4{
@@ -695,20 +686,8 @@ video {
   width: 100vw;
 }
 
-.w-auto{
-  width: auto;
-}
-
-.flex-grow{
-  flex-grow: 1;
-}
-
 .grow{
   flex-grow: 1;
-}
-
-.border-collapse{
-  border-collapse: collapse;
 }
 
 .transform{
@@ -717,26 +696,6 @@ video {
 
 .cursor-pointer{
   cursor: pointer;
-}
-
-.resize{
-  resize: both;
-}
-
-.grid-cols-2{
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-3{
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-cols-4{
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.grid-cols-5{
-  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .items-center{
@@ -807,6 +766,11 @@ video {
 .border-green-600{
   --tw-border-opacity: 1;
   border-color: rgb(22 163 74 / var(--tw-border-opacity));
+}
+
+.bg-\[\#8c5c9a\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(140 92 154 / var(--tw-bg-opacity));
 }
 
 .bg-gray-200{
@@ -893,6 +857,10 @@ video {
   line-height: 2.25rem;
 }
 
+.text-\[40px\]{
+  font-size: 40px;
+}
+
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -901,16 +869,6 @@ video {
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-5xl{
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.text-base{
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .font-bold{
@@ -955,21 +913,13 @@ video {
   color: rgb(79 121 66 / var(--tw-text-opacity));
 }
 
-.text-red-500{
+.text-secondary-100{
   --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-
-.underline{
-  text-decoration-line: underline;
+  color: rgb(245 240 232 / var(--tw-text-opacity));
 }
 
 .outline{
   outline-style: solid;
-}
-
-.filter{
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition{
@@ -1035,6 +985,9 @@ Possibility to create a target class and apply all styles to it, the html will o
   letter-spacing: 0.05em;
 }
 
+/* Use the @layer directive to tell Tailwind which “bucket” a set of custom styles belong to. Valid layers are base, components, and utilities.
+Using the @layer directive lets you control the final declaration order while still organizing your actual code in whatever way you like.*/
+
 .hover\:scale-105:hover{
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -1076,6 +1029,28 @@ Possibility to create a target class and apply all styles to it, the html will o
   --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (min-width: 600px){
+  .laptop\:text-black{
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+  }
+}
+
+@media (min-width: 700px){
+  .lg\:h-96{
+    height: 24rem;
+  }
+
+  .lg\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:text-green-500{
+    --tw-text-opacity: 1;
+    color: rgb(34 197 94 / var(--tw-text-opacity));
+  }
 }
 
 @media (min-width: 768px){
@@ -1145,15 +1120,5 @@ Possibility to create a target class and apply all styles to it, the html will o
   .md\:text-red-500{
     --tw-text-opacity: 1;
     color: rgb(239 68 68 / var(--tw-text-opacity));
-  }
-}
-
-@media (min-width: 1024px){
-  .lg\:h-96{
-    height: 24rem;
-  }
-
-  .lg\:grid-cols-3{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
