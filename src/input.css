@@ -39,3 +39,9 @@ Using the @layer directive lets you control the final declaration order while st
     @apply text-lg;
   }
 }
+
+@layer utilities {
+  .h-center {
+    @apply flex justify-center;
+  }
+}

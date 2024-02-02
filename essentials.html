@@ -7,12 +7,39 @@
     <link rel="stylesheet" href="/src/output.css" />
   </head>
   <body>
-    <!-- centering a single element -->
-    <!-- Adding Custom Styles to text and background using square brackets , the bg purple is overring the @apply-->
-    <h1 class="bg-[#8c5c9a] text-[40px] text-secondary-100">
-      Tailwind horizontaly centered
+    <div
+      class="bg-[#8c5c9a] text-[40px] text-secondary-100 flex justify-center items-center h-28"
+    >
+      <!-- centering a single element -->
+      <!-- Adding Custom Styles from config.js to text and background using square brackets , the bg purple is overring any @apply-->
+      flex + justify-center + items-center
+    </div>
+    <h1 class="text-[#8c5c9a] font-bold flex justify-center h-10">
+      flex + justify-center
     </h1>
-    <h1 class="uppercase">h1 Centered</h1>
-    <h2 class="lo">H2 Subtitle</h2>
+    <!-- <iframe
+      class="w-full aspect-video h-full"
+      src="https://www.youtube.com/embed/a6IIhwZv4ls?si=7xcYfW88jY4Z5zHq"
+    ></iframe> -->
+
+    <div class="container border-rose-300 border-2 rounded-md mx-auto">
+      <h3>container mx-auto</h3>
+      <!-- container will fix the element width accoring to current breakpoint -->
+      <div class="bg-yellow-200">no w-{} declared</div>
+      <div class="bg-red-200 w-2/3 flex justify-end">2/3</div>
+      <div class="bg-blue-200 w-6/12 flex justify-center">6/12</div>
+      <div class="bg-green-200 w-1/4">1/4</div>
+    </div>
+
+    <div class="mt-4 border-blue-300 border-2 p-2">
+      <h2 class="flex justify-center">.columns-5</h2>
+      <div class="columns-5">
+        <div class="bg-gray-300 h-center">January</div>
+        <div class="bg-gray-300">February</div>
+        <div class="bg-gray-300">March</div>
+        <div class="bg-gray-300">April</div>
+        <div class="bg-gray-300">May</div>
+      </div>
+    </div>
   </body>
 </html>
