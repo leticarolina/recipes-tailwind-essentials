@@ -7,7 +7,7 @@ module.exports = {
         // creating a new breakpoint
         laptop: "600px",
         // overriding the default breakpoint lg
-        lg: "700px",
+        lg: "900px",
       },
       colors: {
         primary: "#4F7942",
