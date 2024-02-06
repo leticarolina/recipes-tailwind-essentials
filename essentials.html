@@ -33,7 +33,7 @@
     </div>
 
     <!-- COLUMNS -->
-    <div class="mt-4 border-blue-300 border-2 p-2">
+    <div class="mt-4 border-blue-300 border-4 p-2">
       <h2 class="flex justify-center">.columns-5</h2>
       <div class="columns-5">
         <div class="bg-gray-300 h-center">January</div>
@@ -68,9 +68,9 @@
       </div>
     </div>
 
-    <div class="m-2 flex flex-wrap">
+    <div class="m-2 columns-1 sm:columns-2">
       <!-- BOX DECORATION BREAK -->
-      <div class="border-rose-300 border-2 rounded-md sm:w-1/2">
+      <div class="border-rose-300 border-2 rounded-md">
         <!-- .box-decoration slice will slice out the elemnts and continue the style  -->
         <p class="justify-center text-blue-500">BOX DECORATION BREAK</p>
         <div class="flex justify-between">
@@ -97,7 +97,7 @@
       </div>
 
       <!-- BOX SIXING  -->
-      <div class="border-2 border-green-300 rounded-md sm:w-1/2">
+      <div class="border-2 border-green-300 rounded-md p-1 mt-3 sm:mt-0">
         <!-- box-border	= box-sizing: border-box; This is standard on Tailwind-->
         <!-- telling the browser to include the element’s borders and padding when you give it a height or width.
           This means a 100px × 100px element with a 2px border and 4px of padding on all sides will be rendered as 100px × 100px, with an internal content area of 88px × 88px. -->
@@ -118,27 +118,121 @@
       <div class="mb-2">
         When controlling the flow of text, using the CSS property
         <p class="inline font-bold">display: inline</p>
-        will cause the text inside the element to wrap normally. While using the
+        will cause the text inside the element to wrap normally. Using the
         property
-        <span class="inline-block font-bold">display: inline-block</span> will
-        wrap only the whole block of element to prevent the text inside from
-        extending beyond its parent. Using the property
         <span class="block font-bold">display: block</span>
         will put the element on its own line.
       </div>
 
-      <div class="flex items-center w-2/3 gap-3">
-        <strong class="me-6">Display:flex</strong>
-        <img
-          class="h-36 rounded-full"
-          src="/public/images/Gnocchi-with-Broccoli.jpeg"
-          alt="Gnocchi with Broccoli"
-        />
-        <div>
-          <strong>Gnocchi with Broccoli</strong>
-          <p>Vegetarian Recipe</p>
+      <div class="sm:columns-2">
+        <div class="flex items-center gap-3">
+          <strong class="me-6">Display:flex</strong>
+          <img
+            class="h-36 rounded-full"
+            src="/public/images/Gnocchi-with-Broccoli.jpeg"
+            alt="Gnocchi with Broccoli"
+          />
+          <div>
+            <strong>Gnocchi with Broccoli</strong>
+            <p>Vegetarian Recipe</p>
+          </div>
+        </div>
+
+        <div class="">
+          <p>
+            I am a paragraph, taking a >span inside me, whose has nested a img
+            and a link to the
+            <span class="inline-flex items-baseline hover:inline-block">
+              <!-- .self-center -->
+              <img
+                src="/public/images/blue-grape.jpeg"
+                alt="Blue Grape"
+                class="rounded-full h-5 w-5 mx-1 self-center"
+              />
+              <a href="#" class="text-blue-600">Blue Grape.</a>
+            </span>
+            This span is only wrapping on the same line and having the img +
+            link next to the each other due to
+            <strong>.inline-flex</strong> class. Now, if you hover on it, this
+            >span will have a
+            <strong>.inline-block</strong>
+            class.
+          </p>
         </div>
       </div>
+
+      <!-- GRID -->
+      <h2 class="flex justify-center font-semibold my-3 text-fuchsia-500">
+        Creating a .grid with .grid-cols-3 .grid-rows-2
+      </h2>
+      <div
+        class="grid gap-4 grid-cols-3 grid-rows-2 text-white text-center leading-3"
+      >
+        <div class="p-4 bg-fuchsia-500 rounded-lg">1</div>
+        <div class="p-4 bg-fuchsia-500 rounded-lg">2</div>
+        <div class="p-4 bg-fuchsia-500 rounded-lg">3</div>
+        <div class="p-4 bg-fuchsia-500 rounded-lg">4</div>
+        <div class="p-4 bg-fuchsia-500 rounded-lg">5</div>
+        <div class="p-4 bg-fuchsia-500 rounded-lg">6</div>
+      </div>
+
+      <h2 class="flex justify-center font-semibold my-3 text-blue-500">
+        Creating a .grid with 2 others .inline-grid
+      </h2>
+      <div class="w-full grid-cols-2 grid gap-3 my-2">
+        <div
+          class="inline-grid gap-3 grid-cols-2 grid-rows-2 text-white text-center"
+        >
+          <div class="bg-blue-500 rounded-lg p-4">1</div>
+          <div class="bg-blue-500 rounded-lg p-4">2</div>
+          <div class="bg-blue-500 rounded-lg p-4">3</div>
+          <div class="bg-blue-500 rounded-lg p-4">4</div>
+        </div>
+        <div class="inline-grid gap-3 grid-cols-2 text-white text-center">
+          <div class="bg-blue-500 rounded-lg p-4">1</div>
+          <div class="bg-blue-500 rounded-lg p-4">2</div>
+          <div class="bg-blue-500 rounded-lg p-4">3</div>
+          <div class="bg-blue-500 rounded-lg p-4">4</div>
+        </div>
+      </div>
+
+      <!-- PHANTON INNER CONTAINER WITH CLASS .conntents -->
+      <!-- hidden vs invisible, hidden remove the element from the page , invisible makes it invisible but keeps the space on the page -->
+
+      <div class="flex gap-3 text-white text-center">
+        <div class="bg-pink-500 rounded-lg p-4 hover:hidden">1</div>
+        <div class="bg-pink-500 rounded-lg p-4 invisible">2</div>
+        <div class="bg-pink-500 rounded-lg p-4">3</div>
+        <div class="contents">
+          <div class="bg-pink-500 rounded-lg p-4">inside contents</div>
+          <div class="bg-pink-500 rounded-lg p-4">inside contents</div>
+          <div class="bg-pink-500 rounded-lg p-4">inside contents</div>
+        </div>
+
+        <div class="bg-pink-500 rounded-lg p-4">6</div>
+      </div>
+    </div>
+
+    <!-- FLOAT AND CLEAR -->
+    <div class="border-2 border-pink-500 m-3 rounded-lg p-3">
+      <h2 class="flex justify-center text-pink-500">FLOAT AND CLEAR</h2>
+      <div class="float-right mx-2">
+        <img src="/public/images/pink.jpeg" alt="Pink Aesthetic" class="h-16" />
+      </div>
+      <div class="float-left mx-2">
+        <img src="/public/images/pink.jpeg" alt="Pink Aesthetic" class="h-24" />
+      </div>
+      <p class="text-justify hover:clear-right md:clear-both">
+        <b>Hover on the text</b> to add the class <b>.clear-right</b> and change
+        from its default position (.clear-none) and be placed directly under the
+        element that has <b>.float-right</b> class. Can also try adjust display
+        to medium, class will be <b>.clear-both</b> to position an element below
+        all preceding floated elements. The <b> .float-none </b> reset any
+        floats that are applied to an element. This is the default value for the
+        float property. <p class="block"> <b>Isolation on CSS:</b> Utilities for controlling
+        whether an element should explicitly create a new stacking context or inherit styles from parents.
+        isolate = isolation: isolate; isolation-auto = isolation: auto;</p>
+      </p>
     </div>
   </body>
 </html>

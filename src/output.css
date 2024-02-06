@@ -611,6 +611,10 @@ The components layer is for class-based styles that you want to be able to overr
   visibility: visible;
 }
 
+.invisible{
+  visibility: hidden;
+}
+
 .absolute{
   position: absolute;
 }
@@ -623,8 +627,52 @@ The components layer is for class-based styles that you want to be able to overr
   top: 0px;
 }
 
+.isolate{
+  isolation: isolate;
+}
+
+.isolation-auto{
+  isolation: auto;
+}
+
 .col-span-1{
   grid-column: span 1 / span 1;
+}
+
+.float-start{
+  float: inline-start;
+}
+
+.float-end{
+  float: inline-end;
+}
+
+.float-right{
+  float: right;
+}
+
+.float-left{
+  float: left;
+}
+
+.float-none{
+  float: none;
+}
+
+.clear-left{
+  clear: left;
+}
+
+.clear-right{
+  clear: right;
+}
+
+.clear-both{
+  clear: both;
+}
+
+.clear-none{
+  clear: none;
 }
 
 .m-2{
@@ -637,6 +685,10 @@ The components layer is for class-based styles that you want to be able to overr
 
 .m-4{
   margin: 1rem;
+}
+
+.m-3{
+  margin: 0.75rem;
 }
 
 .mx-auto{
@@ -652,6 +704,16 @@ The components layer is for class-based styles that you want to be able to overr
 .my-2{
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.mx-1{
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.mx-2{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .ml-3{
@@ -690,6 +752,22 @@ The components layer is for class-based styles that you want to be able to overr
   margin-inline-end: 1.5rem;
 }
 
+.mt-2{
+  margin-top: 0.5rem;
+}
+
+.mt-3{
+  margin-top: 0.75rem;
+}
+
+.mb-3{
+  margin-bottom: 0.75rem;
+}
+
+.mb-4{
+  margin-bottom: 1rem;
+}
+
 .box-border{
   box-sizing: border-box;
 }
@@ -710,12 +788,24 @@ The components layer is for class-based styles that you want to be able to overr
   display: flex;
 }
 
+.inline-flex{
+  display: inline-flex;
+}
+
 .flow-root{
   display: flow-root;
 }
 
 .grid{
   display: grid;
+}
+
+.inline-grid{
+  display: inline-grid;
+}
+
+.contents{
+  display: contents;
 }
 
 .hidden{
@@ -762,6 +852,23 @@ The components layer is for class-based styles that you want to be able to overr
   height: 9rem;
 }
 
+.h-auto{
+  height: auto;
+}
+
+.h-fit{
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.h-60{
+  height: 15rem;
+}
+
+.h-5{
+  height: 1.25rem;
+}
+
 .w-1\/4{
   width: 25%;
 }
@@ -806,6 +913,10 @@ The components layer is for class-based styles that you want to be able to overr
   width: 33.333333%;
 }
 
+.w-5{
+  width: 1.25rem;
+}
+
 .grow{
   flex-grow: 1;
 }
@@ -833,6 +944,11 @@ The components layer is for class-based styles that you want to be able to overr
        columns: 5;
 }
 
+.columns-1{
+  -moz-columns: 1;
+       columns: 1;
+}
+
 .break-before-column{
   -moz-column-break-before: column;
        break-before: column;
@@ -847,6 +963,18 @@ The components layer is for class-based styles that you want to be able to overr
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.grid-cols-3{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-rows-3{
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.grid-rows-2{
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
 .flex-col{
   flex-direction: column;
 }
@@ -857,6 +985,10 @@ The components layer is for class-based styles that you want to be able to overr
 
 .items-center{
   align-items: center;
+}
+
+.items-baseline{
+  align-items: baseline;
 }
 
 .justify-end{
@@ -899,8 +1031,24 @@ The components layer is for class-based styles that you want to be able to overr
   gap: 0.25rem;
 }
 
+.gap-4{
+  gap: 1rem;
+}
+
+.self-center{
+  align-self: center;
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
 .overflow-x-hidden{
   overflow-x: hidden;
+}
+
+.whitespace-nowrap{
+  white-space: nowrap;
 }
 
 .rounded-md{
@@ -909,6 +1057,10 @@ The components layer is for class-based styles that you want to be able to overr
 
 .rounded-full{
   border-radius: 9999px;
+}
+
+.rounded-lg{
+  border-radius: 0.5rem;
 }
 
 .border{
@@ -974,6 +1126,21 @@ The components layer is for class-based styles that you want to be able to overr
   border-color: rgb(244 114 182 / var(--tw-border-opacity));
 }
 
+.border-emerald-600{
+  --tw-border-opacity: 1;
+  border-color: rgb(5 150 105 / var(--tw-border-opacity));
+}
+
+.border-pink-600{
+  --tw-border-opacity: 1;
+  border-color: rgb(219 39 119 / var(--tw-border-opacity));
+}
+
+.border-pink-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(236 72 153 / var(--tw-border-opacity));
+}
+
 .bg-\[\#8c5c9a\]{
   --tw-bg-opacity: 1;
   background-color: rgb(140 92 154 / var(--tw-bg-opacity));
@@ -1034,6 +1201,26 @@ The components layer is for class-based styles that you want to be able to overr
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-fuchsia-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 70 239 / var(--tw-bg-opacity));
+}
+
+.bg-blue-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.bg-blue-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.bg-pink-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -1073,6 +1260,10 @@ The components layer is for class-based styles that you want to be able to overr
 
 .p-4{
   padding: 1rem;
+}
+
+.p-1{
+  padding: 0.25rem;
 }
 
 .px-16{
@@ -1121,6 +1312,18 @@ The components layer is for class-based styles that you want to be able to overr
   padding-top: 1.5rem;
 }
 
+.text-center{
+  text-align: center;
+}
+
+.text-justify{
+  text-align: justify;
+}
+
+.align-bottom{
+  vertical-align: bottom;
+}
+
 .font-chef{
   font-family:  'Shadows Into Light', cursive;
 }
@@ -1157,12 +1360,32 @@ The components layer is for class-based styles that you want to be able to overr
   font-weight: 700;
 }
 
+.font-medium{
+  font-weight: 500;
+}
+
+.font-semibold{
+  font-weight: 600;
+}
+
 .uppercase{
   text-transform: uppercase;
 }
 
 .leading-\[3\.5rem\]{
   line-height: 3.5rem;
+}
+
+.leading-6{
+  line-height: 1.5rem;
+}
+
+.leading-4{
+  line-height: 1rem;
+}
+
+.leading-3{
+  line-height: .75rem;
 }
 
 .tracking-widest{
@@ -1227,6 +1450,31 @@ The components layer is for class-based styles that you want to be able to overr
 .text-pink-400{
   --tw-text-opacity: 1;
   color: rgb(244 114 182 / var(--tw-text-opacity));
+}
+
+.text-blue-700{
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
+}
+
+.text-blue-600{
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.text-fuchsia-500{
+  --tw-text-opacity: 1;
+  color: rgb(217 70 239 / var(--tw-text-opacity));
+}
+
+.text-pink-300{
+  --tw-text-opacity: 1;
+  color: rgb(249 168 212 / var(--tw-text-opacity));
+}
+
+.text-pink-500{
+  --tw-text-opacity: 1;
+  color: rgb(236 72 153 / var(--tw-text-opacity));
 }
 
 .outline{
@@ -1304,8 +1552,32 @@ Possibility to create a target class and apply all styles to it, the html will o
 /* Use the @layer directive to tell Tailwind which “bucket” a set of custom styles belong to. Valid layers are base, components, and utilities.
 Using the @layer directive lets you control the final declaration order while still organizing your actual code in whatever way you like.*/
 
+.hover\:invisible:hover{
+  visibility: hidden;
+}
+
+.hover\:float-left:hover{
+  float: left;
+}
+
+.hover\:clear-left:hover{
+  clear: left;
+}
+
+.hover\:clear-right:hover{
+  clear: right;
+}
+
 .hover\:box-content:hover{
   box-sizing: content-box;
+}
+
+.hover\:inline-block:hover{
+  display: inline-block;
+}
+
+.hover\:hidden:hover{
+  display: none;
 }
 
 .hover\:scale-105:hover{
@@ -1356,6 +1628,14 @@ Using the @layer directive lets you control the final declaration order while st
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.focus\:invisible:focus{
+  visibility: hidden;
+}
+
+.focus\:float-none:focus{
+  float: none;
+}
+
 @media (min-width: 600px){
   .laptop\:text-black{
     --tw-text-opacity: 1;
@@ -1364,8 +1644,17 @@ Using the @layer directive lets you control the final declaration order while st
 }
 
 @media (min-width: 640px){
+  .sm\:mt-0{
+    margin-top: 0px;
+  }
+
   .sm\:w-1\/2{
     width: 50%;
+  }
+
+  .sm\:columns-2{
+    -moz-columns: 2;
+         columns: 2;
   }
 
   .sm\:flex-col{
@@ -1380,6 +1669,10 @@ Using the @layer directive lets you control the final declaration order while st
 
   .md\:col-span-4{
     grid-column: span 4 / span 4;
+  }
+
+  .md\:clear-both{
+    clear: both;
   }
 
   .md\:mt-10{
