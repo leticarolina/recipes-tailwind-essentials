@@ -234,5 +234,110 @@
         isolate = isolation: isolate; isolation-auto = isolation: auto;</p>
       </p>
     </div>
+
+    <!-- OBJECT-FIT -->
+  <div class="border-2 border-cyan-700  p-2 " >
+      <h2 class="text-cyan-700  flex justify-center p-1">OBJECT FIT</h2>
+    <div class="columns-4 my-2">
+      <div class="bg-slate-400 ">
+        <!-- This will make the image cover the container while preserving its aspect ratio, potentially cropping some parts. -->
+       <img src="/public/images/pink.jpeg" alt="Pink Aesthetic" class="object-cover h-32 w-full">
+
+      </div>
+
+      <div class="bg-slate-400 ">
+        <!-- This will stretch the image to fill the container without preserving its aspect ratio, potentially distorting it. -->
+        <img src="/public/images/pink.jpeg" alt="Pink Aesthetic" class="object-fill h-32 w-full">
+      </div>
+
+      <div class="bg-slate-400">
+        <!-- contain = This will make the image fit within the container while preserving its aspect ratio. -->
+        <img src="/public/images/pink.jpeg" alt="Pink Aesthetic" class="object-contain h-32 w-full">
+      </div>
+
+      <div class="bg-slate-400 ">
+        <!-- This will resize the image to fit within the container while preserving its aspect ratio but will not enlarge it if it's smaller than the container -->
+        <img src="/public/images/pink.jpeg" alt="Pink Aesthetic" class="object-scale-down h-32 w-full">
+      </div>
+
+    </div>
+
+
+    <!-- OBJECT POSITION -->
+   <div>
+    <h3 class="text-cyan-700  flex justify-center mt-2">OBJECT POSITION</h3>
+    <div class=" mt-3 grid grid-cols-3 grid-rows-2 font-mono ">
+
+      <!-- making picture container bigger than the picture itself -->
+        <div class="flex flex-col items-center">
+         <h3 class="text-sm my-2">Object-top</h3>
+         <div class="w-32 h-32" >
+          <!-- h-full means full width of it's parent container height, same for width -->
+           <img src="/public/images/tatto-guy.jpeg" alt="Men with tattoos" class="rounded-md object-cover h-full w-full object-top"> 
+         </div>
+        </div>
+  
+        <div class="flex flex-col items-center">
+         <h3 class="my-2 text-sm">object-bottom</h3>
+        <div class="h-32 w-32">
+          <img src="/public/images/tatto-guy.jpeg" alt="Men with tattoos" class="rounded-md h-full w-full object-cover object-bottom">
+      </div>
+      </div>
+  
+        <div class="flex flex-col items-center">
+      <h3 class="my-2 text-sm">object-center</h3>
+      <div class="h-32 w-32">
+         <img src="/public/images/tatto-guy.jpeg" alt="Man with tattoos" class="rounded-md h-full w-full object-cover object-center">
+      </div>
+     </div>
+  
+     <div class="flex flex-col items-center">
+      <h3 class="my-2 text-sm">object-left</h3>
+      <div class="h-32 w-32">
+         <img src="/public/images/man.jpeg" alt="Man in front of white wall" class="rounded-md h-full w-full object-cover object-left">
+      </div>
+     </div>
+  
+     <div class="flex flex-col items-center">
+      <h3 class="my-2 text-sm">object-right</h3>
+      <div class="h-32 w-32">
+         <img src="/public/images/man.jpeg" alt="Man in front of white wall" class="rounded-md h-full w-full object-cover object-right">
+      </div>
+     </div>
+  
+     <div class="flex flex-col items-center">
+      <h3 class="my-2 text-sm">object-right-top</h3>
+      <div class="h-32 w-32">
+         <img src="/public/images/palmtree.jpeg" alt="Man in front of white wall" class="rounded-md h-full w-full object-cover object-right-top">
+      </div>
+     </div>
+
+       </div>
+    </div>
+  </div>
+   
+
+  <!-- OVERFLOW -->
+  <div class="grid grid-cols-1  md:grid-cols-3">
+    <div class="border-2 rounded-md border-pink-500 p-8">
+      <h3 class="text-pink-500 flex justify-center mb-3">OVERFLOW</h3>
+<!--  the parent has position relative so  it establishes a new positioning context for its children.  -->
+      <div class="flex items-center bg-gray-200 rounded-md max-w-sm mx-auto hover:overflow-hidden relative">
+        <!-- absolute will kinda put picture one layer above container, it takes element out of the normal document flow and positions relative to its nearest positioned ancestor.
+          Basically, the <img> element has position: absolute; so that it can be positioned relative to its parent <div>.-->
+        <img src="/public/images/me.png" alt="Girl" class="h-28 rounded-full absolute -left-4">
+        <div class="pl-36 py-3">
+          <strong>Leticia Azevedo</strong>
+          <p class="text-sm text-gray-500">Web Developer</p>
+        </div>
+      </div>
+      
+
+    </div>
+
+    <div class="border-2 rounded-md border-gray-700 mt-6"></div>
+    <div class="border-2 rounded-md border-gray-700"></div>
+
+  </div>
   </body>
 </html>
