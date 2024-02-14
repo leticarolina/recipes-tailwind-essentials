@@ -317,11 +317,13 @@
   </div>
    
 
-  <!-- OVERFLOW -->
-  <div class="grid grid-cols-1  md:grid-cols-3">
+ 
+
+    <!-- OVERFLOW -->
     <div class="border-2 rounded-md border-pink-500 p-8">
       <h3 class="text-pink-500 flex justify-center mb-3">OVERFLOW</h3>
-<!--  the parent has position relative so  it establishes a new positioning context for its children.  -->
+
+      <!--  the parent has position relative so  it establishes a new positioning context for its children.  -->
       <div class="flex items-center bg-gray-200 rounded-md max-w-sm mx-auto hover:overflow-hidden relative">
         <!-- absolute will kinda put picture one layer above container, it takes element out of the normal document flow and positions relative to its nearest positioned ancestor.
           Basically, the <img> element has position: absolute; so that it can be positioned relative to its parent <div>.-->
@@ -335,9 +337,98 @@
 
     </div>
 
-    <div class="border-2 rounded-md border-gray-700 mt-6"></div>
-    <div class="border-2 rounded-md border-gray-700"></div>
+    <div class="border-2 rounded-md border-purple-700 mt-6 p-3">
+      <h3 class="flex justify-center font-bold text-purple-700"> Position</h3>
+<!-- static and relative both position an element according to the normal flow of the document. -->
+      <div class="bg-purple-200 p-4 relative ">
+<!-- Using relative, offsets are calculated relative to the element’s normal position and the element will act as a position reference for absolutely positioned children. -->
+        <p>Position: Relative</p>
+        <div class="bg-purple-400 p-4 h-28 static"> 
+          <!-- Using static, Any offsets will be ignored and the element will not act as a position reference for absolutely positioned children. -->
+         <p>Position: Static</p> 
+         <div class="absolute bottom-0 left-0 bg-purple-700 text-white p-2 ">
+          <!-- Use absolute to position an element outside of the normal flow of the document, causing neighboring elements to act as if the element doesn’t exist. -->
+          <p>Absolute child offsets reference to the nearest parent that has a position other than 'static'</p>
+         </div>
+        </div>
+      </div>
+    </div>
 
-  </div>
+
+    
+
+    <!-- Top / Right / Bottom / Left -->
+      <div class="rounded-xl overflow-auto p-5 bg-slate-100 m-4 ">
+      <h3 class="text-blue-500 flex justify-center pb-4 font-bold">Top / Right / Bottom / Left</h3>
+        
+        <div class="grid grid-cols-3 grid-rows-2 gap-3 leading-6  place-items-center text-white">
+
+          <div>
+            <!--  place-items-center to center divs inside grid -->
+            <p class="text-blue-500 text-sm pb-3 ">-top-3 / -left-5</p>
+            <div class="relative w-18 h-18 sm:w-32 sm:h-32 rounded-md bg-blue-200">
+              <div class="absolute -top-3 -left-5 p-4 w-12 h-12 bg-blue-600 flex justify-center items-center rounded-md">1</div>
+            </div>
+          </div>
+       
+          <div>
+            <p class="text-blue-500 text-sm pb-3">bottom-0 / inset-x-0</p>
+            <div class="relative w-18 h-18 sm:w-32 sm:h-32 rounded-md bg-blue-200">
+              <div class="absolute bottom-0 inset-x-0 p-4 h-12 bg-blue-600 flex justify-center items-center rounded-md">2 (no width)</div>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-blue-500 text-sm pb-3">right-0 / inset-y-2</p>
+            <div class="relative w-18 h-18 sm:w-32 sm:h-32 rounded-md bg-blue-200">
+              <div class="absolute p-4 w-14 right-0 inset-y-2 bg-blue-600 flex justify-center items-center rounded-md">3 (no height)</div>
+            </div>
+          </div>
+        
+          <div>
+            <p class="text-blue-500 text-sm pb-3 ">bottom-5 / right-5</p>
+            <div class="relative w-18 h-18 sm:w-32 sm:h-32 rounded-md bg-blue-200">
+              <div class="absolute bottom-5 right-5 h-12 w-12 rounded-md bg-blue-600 flex justify-center items-center">4</div>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-blue-500 text-sm pb-3 ">-bottom-5 / -right-5</p>
+            <div class="relative w-18 h-18 sm:w-32 sm:h-32 rounded-md bg-blue-200">
+              <div class="absolute -bottom-5  -right-5 h-12 w-12 rounded-md bg-blue-600 flex justify-center items-center">5</div>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-blue-500 text-sm pb-3 ">inset-3</p>
+            <div class="relative w-18 h-18 sm:w-32 sm:h-32 rounded-md bg-blue-200">
+              <div class="absolute inset-3 rounded-md bg-blue-600 ">6 no width and heigth</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  
+       <!-- Z-INDEX -->
+       <div class="rounded-xl p-5 bg-pink-100 m-4 ">
+        <h3 class="text-pink-500 flex justify-center pb-2 font-bold">Z-INDEX 
+        </h3>
+          <!-- z-index By default, Tailwind provides six numeric z-index utilities and an auto utility. 
+          You can customize these values by editing theme.zIndex or theme.extend.zIndex in your tailwind.config.js file.
+        If you need to use a one-off z-index use square brackets to generate a property z-[100]-->
+         <div class="bg-pink-200 rounded-lg p-3 text-white flex justify-center -space-x-3 ">
+         <!-- space-x-{} will make horizontal space between flex elements, can also use negative number to make it overlay --> 
+         
+          <div class="h-16 w-16 rounded-full bg-pink-600 flex justify-center items-center ring-2 ring-white z-[60]">z-[60]</div>
+          <div class="h-16 w-16 rounded-full bg-pink-600 flex justify-center items-center ring-2 ring-white z-50 hover:z-auto">z-50</div>
+          <div class="h-16 w-16 rounded-full bg-pink-600 flex justify-center items-center ring-2 ring-white z-40 hover:z-0">z-40</div>
+          <div class="h-16 w-16 rounded-full bg-pink-600 flex justify-center items-center ring-2 ring-white z-30 hover:z-50">z-30</div>
+          <div class="h-16 w-16 rounded-full bg-pink-600 flex justify-center items-center ring-2 ring-white z-20">z-20</div>
+          <div class="h-16 w-16 rounded-full bg-pink-600 flex justify-center items-center ring-2 ring-white z-10">z-10</div>
+          <div class="h-16 w-16 rounded-full bg-pink-600 flex justify-center items-center ring-2 ring-white z-0">z-0</div>
+
+         </div>
+       </div>
+ 
   </body>
 </html>
